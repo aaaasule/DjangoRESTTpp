@@ -8,11 +8,12 @@ def create_url(info):
     host = info.get("host")
     port = info.get("port")
     db = info.get("db")
-    return "{}+{}://{}:{}@{}:{]/{]".format(engine, driver, user, password, host, port, db)
+    return "{}+{}://{}:{}@{}:{}/{}".format(engine, driver, user, password, host, port, db)
 
 
 class Config(object):
     DEBUG = False
+    SECRET_KEY = "EjpNVSNQTyGi1VvWECj9TvC/+kq3oujee2kTfQUs8yCM6xX9Yjq52v54g+HVoknA"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
