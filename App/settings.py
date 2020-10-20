@@ -16,6 +16,9 @@ class Config(object):
     SECRET_KEY = "EjpNVSNQTyGi1VvWECj9TvC/+kq3oujee2kTfQUs8yCM6xX9Yjq52v54g+HVoknA"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+    # 缓存设置
+    CACHE_TYPE = "simple"
+
 
 class DevelopConfig(Config):
     DEBUG = True
@@ -26,7 +29,7 @@ class DevelopConfig(Config):
         "password": "123456",
         "host": "localhost",
         "port": 3306,
-        "db": "flask_tpp"
+        "db": "FlaskTpp"
     }
 
     SQLALCHEMY_DATABASE_URI = create_url(info)

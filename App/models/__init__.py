@@ -3,6 +3,7 @@ from App.ext import db
 
 
 class ModelBase(db.Model):
+    __abstract__ = True
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
 
     def save(self):
@@ -10,7 +11,8 @@ class ModelBase(db.Model):
             db.session.add(self)
             db.session.commit()
             return True
-        except:
+        except Exception as e:
+            print("eee-->", e)
             return False
 
     def delete(self):
